@@ -17,6 +17,8 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
+      display: flex;
+
       a {
         color: #fff;
         text-decoration: none;
@@ -33,4 +35,12 @@ export const Container = styled.div<ContainerProps>`
       }
     }
   }
+`;
+
+export const ActiveBar = styled.span`
+  display: block;
+  height: 2px;
+  background: #ff872c;
+  margin-top: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
