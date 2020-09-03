@@ -23,9 +23,9 @@ interface Transaction {
 }
 
 interface Balance {
-  income: number;
-  outcome: number;
-  total: number;
+  income: string;
+  outcome: string;
+  total: string;
 }
 
 const Dashboard: React.FC = () => {
@@ -57,7 +57,9 @@ const Dashboard: React.FC = () => {
               <p>Entradas</p>
               <img src={income} alt="Income" />
             </header>
-            <h1 data-testid="balance-income">{formatValue(balance.income)}</h1>
+            <h1 data-testid="balance-income">
+              {formatValue(Number(balance.income))}
+            </h1>
           </Card>
           <Card>
             <header>
@@ -65,7 +67,7 @@ const Dashboard: React.FC = () => {
               <img src={outcome} alt="Outcome" />
             </header>
             <h1 data-testid="balance-outcome">
-              {formatValue(balance.outcome)}
+              {formatValue(Number(balance.outcome))}
             </h1>
           </Card>
           <Card total>
@@ -73,7 +75,9 @@ const Dashboard: React.FC = () => {
               <p>Total</p>
               <img src={total} alt="Total" />
             </header>
-            <h1 data-testid="balance-total">{formatValue(balance.total)}</h1>
+            <h1 data-testid="balance-total">
+              {formatValue(Number(balance.total))}
+            </h1>
           </Card>
         </CardContainer>
 
